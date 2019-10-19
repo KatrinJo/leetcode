@@ -6,7 +6,7 @@ class Solution {
 public:
 	map<string, map<string, double> > dis;
 	map<string, bool> visted;
-	void init(map<string, bool> & visted) {
+	void init() {
 		for (auto & x : visted) {
 			x.second = false;
 		}
@@ -53,7 +53,7 @@ public:
 				res.push_back(-1.0);
 			}
 			else {
-				init(visted);
+				init();
 				visted[q[0]] = true;
 				auto d = cal(q, 1.0);
 				res.push_back(d);
