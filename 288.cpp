@@ -7,15 +7,6 @@ public:
 	/*
 	* @param dictionary: a list of words
 	*/
-	string int2str(int n) {
-		string ret = "";
-		while (n > 0) {
-			ret.push_back(n % 10 + '0');
-			n /= 10;
-		}
-		ret.assign(ret.rbegin(), ret.rend());
-		return ret;
-	}
 	map<string, int> cnt;
 	map<string, int> dict;
 
@@ -28,7 +19,7 @@ public:
 				continue;
 			t.clear();
 			t.push_back(s[0]);
-			t += int2str(l - 2);
+			t += to_string(l - 2);
 			t.push_back(s[l - 1]);
 
 			if (dict.find(t) == dict.end())
@@ -50,7 +41,7 @@ public:
 			return true;
 		t.clear();
 		t.push_back(word[0]);
-		t += int2str(l - 2);
+		t += to_string(l - 2);
 		t.push_back(word[l - 1]);
 		if (dict.find(t) == dict.end())
 			return true;
